@@ -1,24 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Teste;
+
 use Illuminate\Http\Request;
 
-class TesteController extends Controller
+class QuestaoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function home()
     {
       return view('home.home');
     }
     public function index()
     {
-        $testes = Teste::all();
-        return view('teste.index')->withTestes($testes);
+        //
     }
 
     /**
@@ -28,7 +28,7 @@ class TesteController extends Controller
      */
     public function create()
     {
-        return view('teste.create');
+        //
     }
 
     /**
@@ -39,9 +39,7 @@ class TesteController extends Controller
      */
     public function store(Request $request)
     {
-             
-        Teste::create($request->all());
-        return redirect()->route('teste.index');
+        //
     }
 
     /**
@@ -50,11 +48,10 @@ class TesteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Teste $teste)
+    public function show($id)
     {
-        return view('teste.show')->withTeste($teste);
+        //
     }
-
 
     /**
      * Show the form for editing the specified resource.
@@ -62,10 +59,11 @@ class TesteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Teste $teste)
-    { 
-        return view('teste.edit')->withTeste($teste);
+    public function edit($id)
+    {
+        //
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -73,10 +71,9 @@ class TesteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Teste $teste)
+    public function update(Request $request, $id)
     {
-        $teste->fill($request->all())->save();
-        return redirect()->route('teste.index');
+        //
     }
 
     /**
@@ -85,9 +82,8 @@ class TesteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Teste $teste)
+    public function destroy($id)
     {
-        $teste->delete();
-        return redirect()->route('teste.index');
+        //
     }
 }

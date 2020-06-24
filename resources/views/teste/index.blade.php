@@ -6,7 +6,7 @@
 
 
 
-    @forelse($testes as $teste)
+    @foreach($testes as $teste)
         <h3>teste</h3>
         nome:<P>{{$teste->nome}}</P>
         ponto :<P>{{$teste->ponto}}</P>
@@ -14,7 +14,7 @@
     <p>
 
         <a href="{{route('teste.show',$teste)}}" class="btn btn-success">MOSTRAR </a>
-        <a href="{{route('teste.edit',$teste)}}" class="btn btn-success">Editar</a>
+        <a href="{{route('teste.edit',$teste)}}" class="btn btn-success">EDITAR</a>
 
         </p>
         <form action="{{route('teste.destroy',$teste->id)}}" method="post">
@@ -29,13 +29,9 @@
 
          </form>
 
+        <p> Registro Foi Cadastrado com sucesso</p>
 
-
-    @empty
-
-        <p> nao cadastrou</p>
-
-    @endforelse
+    @endforeach
 
 
 

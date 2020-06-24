@@ -1,24 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Teste;
+use App\Question;
 use Illuminate\Http\Request;
 
-class TesteController extends Controller
+class QuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function home()
-    {
-      return view('home.home');
-    }
     public function index()
     {
-        $testes = Teste::all();
-        return view('teste.index')->withTestes($testes);
+        $questions = Question::all();
+        return view('question.index')->withQuestion($questions);
     }
 
     /**
@@ -28,7 +24,7 @@ class TesteController extends Controller
      */
     public function create()
     {
-        return view('teste.create');
+        return view('question.create');
     }
 
     /**
@@ -40,9 +36,10 @@ class TesteController extends Controller
     public function store(Request $request)
     {
              
-        Teste::create($request->all());
-        return redirect()->route('teste.index');
+        Question::create($request->all());
+        return redirect()->route('question.index');
     }
+
 
     /**
      * Display the specified resource.
@@ -50,9 +47,9 @@ class TesteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Teste $teste)
+    public function show(Question $question)
     {
-        return view('teste.show')->withTeste($teste);
+        return view('question.show')->withQuestion($question);
     }
 
 
@@ -62,10 +59,11 @@ class TesteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Teste $teste)
+    public function edit(Question $question)
     { 
-        return view('teste.edit')->withTeste($teste);
+        return view('question.edit')->withQuestion($question);
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -73,11 +71,12 @@ class TesteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Teste $teste)
+    public function update(Request $request, Question $question)
     {
-        $teste->fill($request->all())->save();
-        return redirect()->route('teste.index');
+        $question->fill($request->all())->save();
+        return redirect()->route('question.index');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -85,9 +84,9 @@ class TesteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Teste $teste)
+    public function destroy(Question $question)
     {
-        $teste->delete();
-        return redirect()->route('teste.index');
+        $question->delete();
+        return redirect()->route('question.index');
     }
 }

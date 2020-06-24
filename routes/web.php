@@ -12,5 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/','TesteController@home')->name('home');
+
+Route::get('/', function () { 
+    
+    
+    
+    return view('layout.welcome');
+
+
+
+});
 Route::resource('teste', 'TesteController');
+Route::resource('questao', 'QuestaoController');
+
+Route::resource('question', 'QuestionController');
+Route::get('/home', 'QuestaoController@home')->name('home');
