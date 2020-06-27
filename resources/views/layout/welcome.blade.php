@@ -82,23 +82,8 @@
             <div class="content">
                 <div class="title m-b-md">
                     Teste Ari
-                </div>
+                </div> 
 
-                <div class="links">
-                   <div class="nav navbar">
-                 <ul class="nav navbar mr-auto">
-
-                     <li>
-                        <a href="{{route('teste.create')}}" class="btn btn-info">CADASTRAR TESTE</a>
-                     </li>
-                     <li>
-                        <a href="{{route('question.create')}}" class="btn btn-info">CADASTRAR QUESTÃO</a>
-                     </li>
-                    <li>
-                        <a class="btn btn-info">TESTE</a>
-                     </li>
-                 </ul>
-                </div>
                 <div class="container">
 
                     @yield('conteudo')

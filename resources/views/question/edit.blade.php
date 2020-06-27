@@ -1,5 +1,5 @@
 @extends('layout.welcome')
-@section('cont')
+@section('cont6')
 
     <h1>EDITAR  </h1>
 

@@ -31,9 +31,8 @@ class CreateQuestoesTable extends Migration
             $table->string('questaosete');       
             $table->string('correta');
             $table->double('valorquestao');
-            $table->integer('teste_id')->unsigned();
-
-            $table->foreign('teste_id')->references('id')->on('testes')->onDelete('cascade');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
